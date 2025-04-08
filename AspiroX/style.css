@@ -1,0 +1,821 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Video Background Styling */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.5; /* Adjust opacity for a darker effect */
+}
+
+/* Body Styling */
+body {
+    display: flex;             /* Enable Flexbox layout */
+    flex-direction: column;    /* Stack elements vertically */
+    min-height: 100vh;         /* Ensure body takes at least 100% of the viewport height */
+    background-color: black;
+    overflow-x: hidden;        /* Prevent horizontal scroll */
+    position: relative;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
+
+body.fade-out {
+    opacity: 0;
+}
+
+.logo img {
+    width: 164px;
+    border-radius: 2px;
+    margin-top: 2px;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(to right, black, #333); /* Fading from black to light black */
+    padding: 0 20px;
+    color: white;
+}
+
+.center-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.center-nav ul {
+    display: flex;
+    gap: 34px;
+}
+
+.center-nav ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.center-nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.center-nav ul li:hover {
+    background-color: #ff7f00;
+    color: black;
+}
+
+.center-nav ul li:hover a {
+    color: black;
+}
+
+.content {
+    width: 100%;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
+    border-bottom: 1px solid #ccc;
+    background-color: gray;  /* Gray background for section */
+    color: white;  /* Dark text */
+}
+
+.section.even {
+    background-color: black; /* Light gray background */
+}
+
+.section.odd .text {
+    order: 1;
+}
+
+.section.odd .image {
+    order: 2;
+}
+
+.section.even .text {
+    order: 2;
+}
+
+.section.even .image {
+    order: 1;
+}
+
+.section .text {
+    width: 50%;
+    padding: 20px;
+    font-size: large;
+}
+
+.section .image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section .image img {
+    max-width: 100%;  /* Ensures the image takes up no more than the container width */
+    height: auto;  /* Maintains aspect ratio */
+    max-height: 250px;  /* Limits the height of the image */
+    border-radius: 10px;
+}
+
+/* Styled Button */
+.styled-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #eaa339;  /* Light orange background */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;  /* Smooth transition for hover */
+    border: 2px solid transparent; /* Border for normal state */
+}
+
+/*Skillify styles --------------------------------------------------------------------------------------*/
+.styled-button:hover {
+    background-color: #e67600;  /* Darker orange on hover */
+    color: white;  /* Keep text color white */
+    border: 2px solid black;  /* Black border (box) on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Optional shadow for extra effect */
+}
+
+.quiz-container {
+    max-width: 1200px; /* Increased width of the quiz container */
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #949292; /* Grey background for the quiz container */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.quiz-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: black; /* Title text color set to orange */
+    text-decoration: underline; /* Underline the title */
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.question h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.answers {
+    display: block; /* Display options from top to bottom */
+    margin-left: 20px; /* Optional, add left margin for alignment */
+}
+
+.answers label {
+    display: block; /* Display each option on a new line */
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* Change radio button color to orange when selected */
+input[type="radio"]:checked {
+    accent-color: orange; /* Change radio button selected color to orange */
+}
+
+button.styled-buttonn {
+    background-color: orange; /* Submit button color changed to orange */
+    color: white;
+    font-size: 16px; /* Reduced font size for the button */
+    padding: 12px 24px; /* Reduced padding for the button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.styled-buttonn:hover {
+    background-color: #e67e00; /* Slightly darker orange on hover */
+}
+
+.result {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Duel Styles ---------------------------------------------------------------------*/
+/* Career Selection */
+.career-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.career-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 8px;  /* Reduced margin */
+    padding: 8px 15px;  /* Reduced padding */
+    font-size: 14px;  /* Reduced font size */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    background-color: #f8a854;
+    color: white;
+    white-space: nowrap;
+    height: 40px;  /* Reduced height */
+    line-height: 25px;  /* Adjusted line-height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.selected {
+    background-color: #f96c14;
+}
+
+button:hover {
+    background-color: #e67e3d;
+}
+
+/* Compare Button */
+.compare-btn {
+    background-color: black;
+    color: black;
+    padding: 12px 20px;  /* Adjusted padding */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;  /* Adjusted font size */
+    transition: background-color 0.3s ease;
+    height: 40px;  /* Adjusted height */
+    line-height: 25px;  /* Adjusted line-height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compare-btn.active {
+    background-color: gray;
+}
+
+.compare-btn:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #333;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #444;
+}
+
+tr:nth-child(even) {
+    background-color: #555;
+}
+
+tr:hover {
+    background-color: #666;
+}
+
+/*Mapify section --------------------------------------------------------------------------------------------------*/
+/* Styling for Mapify Intro Section (similar to Aspire Intro) */
+.mapify-intro {
+    background-color: #1e1e1e;
+    border-left: 5px solid #f39c12; /* Accent border on the left */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    max-width: 800px;
+    margin: 30px auto;
+    color: #e0e0e0;
+    line-height: 1.8;
+}
+
+.mapify-intro p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.career-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping to create two lines */
+    margin-bottom: 20px;
+    gap: 10px; /* Space between buttons */
+}
+
+/* Career content container */
+#career-content {
+    padding: 20px;
+    background-color: rgb(72, 72, 72);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Adding spacing between different sections */
+#career-content h2, #career-content h3, #career-content p {
+    margin-bottom: 20px; /* Adds space below headers and paragraphs */
+}
+
+/* Styling the headings */
+#career-content h2 {
+    font-size: 2rem;
+    color: black; /* Dark color for headings */
+    margin-bottom: 30px; /* Larger gap before sub-sections */
+}
+
+#career-content h3 {
+    font-size: 1.5rem;
+    color: orange; /* Lighter color for subheadings */
+}
+
+/* Styling paragraphs */
+#career-content p {
+    font-size: 1rem;
+    color: white; /* Dark gray text for paragraphs */
+    margin-left: 20px;
+}
+
+/* Lists inside content */
+#career-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#career-content ul li {
+    font-size: 1rem;
+    color: white;
+    margin-left: 20px;
+    padding: 5px 0;
+}
+
+/* MatchUp section ---------------------------------------------------------------------------------------------------------*/
+.matchup-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgb(60, 59, 59);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.matchup-container h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #eb8e24;
+    margin-bottom: 20px;
+}
+
+/* Apply white color to all headings */
+.matchup-container h2,
+.matchup-container h3,
+.matchup-container p {
+    color: white; /* Set text color to white for all headings */
+    font-size: 1.3em; /* Adjust font size if necessary */
+    margin-bottom: 10px;
+}
+
+/* Specific targeting for Career Recommendations heading */
+.matchup-container .career-recommendations-heading {
+    color: white;
+    font-size: 1.5em; /* Adjust size for emphasis */
+    margin-top: 20px;
+}
+
+/* Styling the dropdown */
+.matchup-dropdown {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Styling the input text box */
+.matchup-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.matchup-input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Styling the submit button */
+.matchup-submit {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.matchup-submit:hover {
+    background-color: #e38417;
+}
+
+/* Styling the output section */
+.matchup-output {
+    margin-top: 30px;
+}
+
+.matchup-output h3 {
+    font-size: 1.5em;
+    color: white;
+}
+
+.matchup-output-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    color: #333333;
+    font-size: 1.1em;
+}
+
+/* Styling the labels */
+.matchup-container label {
+    color: white; /* Set text color to white for labels */
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/*Aspire -----------------------------------------------------------------------------------*/
+/* Description Paragraph Styling */
+.pathways-description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    color: #f5f5f5;
+    background-color: #1a1a1a; /* Dark background for the paragraph */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-left: 4px solid #ffa200; /* Orange accent border */
+    text-align: center;
+}
+
+/* Dropdown Styling */
+select {
+    font-size: 16px;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 8px;
+    border: 2px solid #333;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+select:hover, select:focus {
+    border-color: #e2751c;
+    background-color: #eef4fc;
+    color: #000;
+}
+
+/* Result Card Styling */
+.career-path-result {
+    background-color: #333;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 500px;
+    text-align: left; /* Changed to left-align for readability */
+    margin: 20px auto;
+    display: none; /* Hidden by default, will show dynamically */
+}
+
+.career-path-result h3 {
+    color: #ffa200;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.career-path-result p {
+    margin: 10px 0; /* Adds space between each topic */
+    line-height: 1.6; /* Improved readability */
+}
+
+.career-path-result strong {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ffa200;
+}
+
+/* Center Content in Page */
+.career-path-selection {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+/*Simulate ----------------------------------------------------------------------------------------------------------------------*/
+/* Main container styling */
+.aspire-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.aspire-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffb300;
+}
+
+.aspire-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #b0b0b0;
+}
+
+.aspire-scenario-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    color: #dcdcdc;
+}
+
+/* Button styling */
+.aspire-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #ff9900;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 150px; /* Reduced width */
+    max-width: 60%; /* Ensures button is responsive */
+    margin: 0 auto; /* Centers button within container */
+}
+
+.aspire-button:hover {
+    background-color: #e68a00;
+}
+
+/* Stats display styling */
+#stats-container {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #292929;
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+#stats-container p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    color: #a9a9a9;
+}
+
+/*Pathways styling ------------------------------------------------------------------------------------------------------------*/
+
+.pathways-career-paths {
+    text-align: center;
+    margin: 50px 0;
+    color: #f5f5f5;
+}
+
+.pathways-career-paths h2 {
+    font-size: 2em;
+    color: #ff8c00; /* Orange color for the title */
+    margin-bottom: 10px;
+}
+
+.pathways-description {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: #f5f5f5;
+    background-color: #1a1a1a; /* Dark background for the paragraph */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-left: 4px solid #fa9c2a; /* Orange accent border */
+}
+
+.pathways-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.pathways-button-container button {
+    background-color: #f18e15; /* Orange color for buttons */
+    color: #1a1a1a; /* Dark text for contrast */
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pathways-button-container button:hover {
+    background-color: #e67e00;
+    transform: scale(1.05);
+}
+
+.pathways-button-container button:active {
+    transform: scale(0.95);
+}
+
+
+/* Footer ---------------------------------------------------------------------------------------------------------------------*/
+footer {
+    background-color: black;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-section.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-section.social-icons a img.white-icon {
+    filter: invert(1);
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.footer-section.social-icons a:hover img.white-icon {
+    transform: scale(1.1);
+}
+
+.footer-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ff7f00;
+}
+
+.footer-section h2::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: #ff7f00;
+    margin: 5px auto 0;
+}
+
+.explore-lists {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.explore-lists ul {
+    list-style: none;
+    padding: 0;
+}
+
+.explore-lists ul li {
+    margin-bottom: 10px;
+}
+
+.explore-lists ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.explore-lists ul li a:hover {
+    color: #ff7f00;
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    border-top: 1px solid white;
+    padding-top: 20px;
+    font-size: 1em;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .section .text, .section .image {
+        width: 100%;
+        padding: 10px;
+    }
+    .section .image img {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}

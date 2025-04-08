@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AspiroX | Skill-to-Job Matching</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/assets/images/AspiroX_logo.jpg" alt="Logo">
+                </a>
+            </div>
+
+            <div class="center-nav">
+                <ul>
+                    <li><a href="skillify.html" class="nav-link">Skillify</a></li>
+                    <li><a href="duel.html" class="nav-link">Duel</a></li>
+                    <li><a href="mapify.html" class="nav-link">Mapify</a></li>
+                    <li><a href="matchup.html" class="nav-link">MatchUp</a></li>
+                    <li><a href="aspire.html" class="nav-link">Aspire</a></li>
+                    <li><a href="simulate.html" class="nav-link">Simulate</a></li>
+                    <li><a href="pathways.html" class="nav-link">Pathways</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <video autoplay loop muted playsinline class="background-video">
+        <source src="assets/videos/Futuristic_Background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <main>
+        <div class="matchup-container">
+            <h1>Skill-to-Job Matching</h1>
+            <p>Select a skill set or enter your skills to receive career recommendations:</p>
+
+            <!-- Option 1: Dropdown with predefined skill sets -->
+            <label for="skills">Select your skills:</label>
+            <select id="skills" name="skills" class="matchup-dropdown">
+                <option value="software_engineering">Software Engineering (JS, React, Python, Git)</option>
+                <option value="data_science">Data Science & Analytics (Python, SQL, ML, Data Visualization)</option>
+                <option value="cybersecurity">Cybersecurity (Network Security, Ethical Hacking, Penetration Testing)</option>
+                <option value="ai_ml">Artificial Intelligence & Machine Learning (Python, TensorFlow, Deep Learning)</option>
+                <option value="digital_marketing">Digital Marketing (SEO, Google Ads, Social Media Marketing)</option>
+                <option value="product_management">Product Management (Agile, Product Strategy, Roadmap Planning)</option>
+                <option value="ux_ui_design">UX/UI Design (Figma, Wireframing, HTML/CSS)</option>
+                <option value="blockchain">Blockchain Technology (Solidity, Ethereum, Smart Contracts)</option>
+                <option value="healthcare_consulting">Healthcare Consulting (Healthcare Management, Data Analytics)</option>
+                <option value="full_stack">Full Stack Development (JavaScript, React, Node.js, MongoDB)</option>
+            </select>
+
+            <!-- Option 2: Text input for skills -->
+            <br>
+            <label for="input-skills">Alternatively, enter your skills (separated by commas):</label>
+            <input type="text" id="input-skills" placeholder="e.g. Python, SQL, Machine Learning" class="matchup-input">
+
+            <button id="submit-btn" class="matchup-submit">Submit</button>
+
+            <div id="output" class="matchup-output">
+                <h3>Career Recommendations:</h3>
+                <div id="output-content" class="matchup-output-content"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section social-icons">
+                <a href="https://www.linkedin.com/company/ninxify/" target="_blank">
+                    <img src="/assets/images/linkedin.png" alt="LinkedIn" class="white-icon">
+                </a>
+                <a href="https://www.instagram.com/ninxify/" target="_blank">
+                    <img src="/assets/images/Instagram.png" alt="Instagram" class="white-icon">
+                </a>
+                <a href="https://www.youtube.com/channel/UC303glYhLMP541bJISWeG8g" target="_blank">
+                    <img src="/assets/images/youtube.png" alt="YouTube" class="white-icon">
+                </a>
+            </div>
+            <div class="footer-section explore">
+                <h2>Explore</h2>
+                <div class="explore-lists">
+                    <ul>
+                        <li><a href="skillify.html">Skill Assessment Quiz</a></li>
+                        <li><a href="duel.html">1v1 Career Comparison</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="mapify.html">Career Exploration Map</a></li>
+                        <li><a href="matchup.html">Skill-to-Job Matching</a></li>
+                    </ul>
+                </div>
+                <p>© 2024 NinX. All rights reserved.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Email - ninxplore@gmail.com</span>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("submit-btn").addEventListener("click", function () {
+            let skills = document.getElementById("skills").value;
+            let inputSkills = document.getElementById("input-skills").value.trim();
+    
+            if (!inputSkills && skills === "") {
+                alert("Please select or enter your skills.");
+                return;
+            }
+    
+            // If the user entered comma-separated skills, split them into an array
+            let userSkills = inputSkills ? inputSkills.split(",").map(skill => skill.trim()) : [skills];
+    
+            let outputContent = document.getElementById("output-content");
+    
+            // Get career recommendations based on the entered skills
+            let careerRecommendations = getCareerRecommendations(userSkills);
+            outputContent.innerHTML = careerRecommendations || "Sorry, no career recommendations found for the selected skills.";
+        });
+    
+        function getCareerRecommendations(skills) {
+            const careerData = {
+                "python": `
+                    <ul>
+                        <li><strong>Data Scientist</strong>: Use Python for data analysis, machine learning, and statistical modeling.</li>
+                        <li><strong>Backend Developer</strong>: Build web applications using Python frameworks like Django or Flask.</li>
+                    </ul>`,
+                "c": `
+                    <ul>
+                        <li><strong>Embedded Systems Engineer</strong>: Develop low-level software for embedded systems and IoT devices using C.</li>
+                        <li><strong>System Programmer</strong>: Write efficient code for system-level programming in C.</li>
+                    </ul>`,
+                "software_engineering": `
+                    <ul>
+                        <li><strong>Frontend Developer</strong>: Focus on building user-facing web apps using React and JS.</li>
+                        <li><strong>Backend Developer</strong>: Develop server-side applications using Node.js and Python.</li>
+                        <li><strong>Full Stack Developer</strong>: Work on both frontend and backend technologies like React, Node.js.</li>
+                    </ul>`,
+                "data_science": `
+                    <ul>
+                        <li><strong>Data Analyst</strong>: Work with raw data, generate reports using SQL and data visualization tools.</li>
+                        <li><strong>Data Scientist</strong>: Build machine learning models and analyze data using Python and SQL.</li>
+                        <li><strong>Business Intelligence Analyst</strong>: Create interactive reports and dashboards with data visualization tools.</li>
+                    </ul>`,
+                "cybersecurity": `
+                    <ul>
+                        <li><strong>Security Analyst</strong>: Monitor security systems for vulnerabilities and patch threats.</li>
+                        <li><strong>Penetration Tester (Ethical Hacker)</strong>: Simulate cyber-attacks to find vulnerabilities in networks.</li>
+                        <li><strong>Security Engineer</strong>: Build and maintain robust security systems.</li>
+                    </ul>`,
+                "ai_ml": `
+                    <ul>
+                        <li><strong>AI Researcher</strong>: Conduct research to improve deep learning models and publish findings.</li>
+                        <li><strong>Machine Learning Engineer</strong>: Design and implement machine learning models.</li>
+                        <li><strong>Data Scientist (AI Focus)</strong>: Apply AI techniques to big data and build predictive models.</li>
+                    </ul>`,
+                "digital_marketing": `
+                    <ul>
+                        <li><strong>SEO Specialist</strong>: Optimize websites for better search engine rankings.</li>
+                        <li><strong>Digital Marketing Manager</strong>: Manage digital campaigns and social media strategies.</li>
+                        <li><strong>Content Strategist</strong>: Develop content strategies for audience engagement across digital platforms.</li>
+                    </ul>`,
+                "product_management": `
+                    <ul>
+                        <li><strong>Product Manager</strong>: Lead product strategies, create roadmaps, and prioritize features.</li>
+                        <li><strong>Scrum Master</strong>: Facilitate agile development processes.</li>
+                    </ul>`,
+                "ux_ui_design": `
+                    <ul>
+                        <li><strong>UX Designer</strong>: Conduct user research, wireframe design concepts, and optimize user experiences.</li>
+                        <li><strong>UI Designer</strong>: Focus on the visual design of applications, ensuring usability and functionality.</li>
+                    </ul>`,
+                "blockchain": `
+                    <ul>
+                        <li><strong>Blockchain Developer</strong>: Develop decentralized applications and smart contracts.</li>
+                        <li><strong>Blockchain Consultant</strong>: Advise companies on how to integrate blockchain technology into their business models.</li>
+                    </ul>`,
+                "healthcare_consulting": `
+                    <ul>
+                        <li><strong>Healthcare Analyst</strong>: Analyze healthcare data to optimize operational efficiency.</li>
+                        <li><strong>Healthcare Consultant</strong>: Advise healthcare organizations on strategy, operations, and technology integration.</li>
+                    </ul>`,
+                "full_stack": `
+                    <ul>
+                        <li><strong>Full Stack Developer</strong>: Work on both frontend and backend technologies to build web applications.</li>
+                        <li><strong>Web Application Architect</strong>: Design scalable architectures for web applications.</li>
+                    </ul>`
+            };
+    
+            // Combine all skills into a list of potential careers
+            let recommendations = [];
+            skills.forEach(skill => {
+                if (careerData[skill.toLowerCase()]) {
+                    recommendations.push(careerData[skill.toLowerCase()]);
+                }
+            });
+    
+            return recommendations.length > 0 ? recommendations.join("") : "";
+        }
+    </script>
+</body>
+
+</html>

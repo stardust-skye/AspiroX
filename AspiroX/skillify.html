@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AspiroX | Skill Assessment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/assets/images/AspiroX_logo.jpg" alt="Logo">
+                </a>
+            </div>
+
+            <div class="center-nav">
+                <ul>
+                    <li><a href="skillify.html" class="nav-link">Skillify</a></li>
+                    <li><a href="duel.html" class="nav-link">Duel</a></li>
+                    <li><a href="mapify.html" class="nav-link">Mapify</a></li>
+                    <li><a href="matchup.html" class="nav-link">MatchUp</a></li>
+                    <li><a href="aspire.html" class="nav-link">Aspire</a></li>
+                    <li><a href="simulate.html" class="nav-link">Simulate</a></li>
+                    <li><a href="pathways.html" class="nav-link">Pathways</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <video autoplay loop muted playsinline class="background-video">
+        <source src="assets/videos/Futuristic_Background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+
+    <div class="quiz-container">
+        <h1>Skills Assessment Quiz</h1>
+        <form id="quizForm">
+            <div class="question">
+                <h3>1. Which programming language are you most comfortable with?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q1" value="tech"> Python</label>
+                    <label><input type="radio" name="q1" value="tech"> Java</label>
+                    <label><input type="radio" name="q1" value="tech"> JavaScript</label>
+                    <label><input type="radio" name="q1" value="tech"> C++</label>
+                    <label><input type="radio" name="q1" value="tech"> SQL</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>2. Which type of projects do you enjoy the most?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q2" value="soft"> Web Development</label>
+                    <label><input type="radio" name="q2" value="soft"> Mobile App Development</label>
+                    <label><input type="radio" name="q2" value="soft"> Data Analysis</label>
+                    <label><input type="radio" name="q2" value="soft"> Machine Learning</label>
+                    <label><input type="radio" name="q2" value="soft"> Cybersecurity</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>3. How do you prefer to work?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q3" value="soft"> Independently</label>
+                    <label><input type="radio" name="q3" value="soft"> As part of a team</label>
+                    <label><input type="radio" name="q3" value="soft"> With a lot of direction and structure</label>
+                    <label><input type="radio" name="q3" value="soft"> With flexible goals and minimal supervision</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>4. What motivates you the most in your work?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q4" value="soft"> Solving complex problems</label>
+                    <label><input type="radio" name="q4" value="soft"> Creativity and innovation</label>
+                    <label><input type="radio" name="q4" value="soft"> Helping others</label>
+                    <label><input type="radio" name="q4" value="soft"> Achieving career success</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>5. What skills are you most interested in developing?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q5" value="soft"> Software Development</label>
+                    <label><input type="radio" name="q5" value="soft"> Data Science</label>
+                    <label><input type="radio" name="q5" value="soft"> Cybersecurity</label>
+                    <label><input type="radio" name="q5" value="soft"> Cloud Computing</label>
+                    <label><input type="radio" name="q5" value="soft"> AI/ML Development</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>6. How do you feel about learning new technologies?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q6" value="soft"> Excited</label>
+                    <label><input type="radio" name="q6" value="soft"> Nervous but ready</label>
+                    <label><input type="radio" name="q6" value="soft"> Neutral</label>
+                    <label><input type="radio" name="q6" value="soft"> Uninterested</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>7. What is your preferred learning method?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q7" value="soft"> Hands-on coding challenges</label>
+                    <label><input type="radio" name="q7" value="soft"> Online tutorials and videos</label>
+                    <label><input type="radio" name="q7" value="soft"> Reading books and documentation</label>
+                    <label><input type="radio" name="q7" value="soft"> Group study sessions</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>8. Which of the following do you prefer in a career?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q8" value="soft"> Innovation-driven roles</label>
+                    <label><input type="radio" name="q8" value="soft"> Structured roles with clear guidelines</label>
+                    <label><input type="radio" name="q8" value="soft"> Client-facing roles</label>
+                    <label><input type="radio" name="q8" value="soft"> Leadership roles</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>9. How do you prefer to manage your time?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q9" value="soft"> I make a detailed schedule</label>
+                    <label><input type="radio" name="q9" value="soft"> I prefer flexibility and adaptability</label>
+                    <label><input type="radio" name="q9" value="soft"> I break down tasks into smaller chunks</label>
+                    <label><input type="radio" name="q9" value="soft"> I prioritize the most urgent tasks first</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>10. Which of these statements most closely aligns with your career goals?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q10" value="soft"> I want to create innovative solutions that impact the world</label>
+                    <label><input type="radio" name="q10" value="soft"> I want to work in a dynamic, fast-paced environment with constant challenges</label>
+                    <label><input type="radio" name="q10" value="soft"> I want to build a stable career and grow within a company</label>
+                    <label><input type="radio" name="q10" value="soft"> I want to lead a team and inspire others to achieve greatness</label>
+                </div>
+            </div>
+
+            <button type="button" class="styled-buttonn" onclick="calculateResult()">Submit</button>
+        </form>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section social-icons">
+                <a href="https://www.linkedin.com/company/ninxify/" target="_blank">
+                    <img src="/assets/images/linkedin.png" alt="LinkedIn" class="white-icon">
+                </a>
+                <a href="https://www.instagram.com/ninxify/" target="_blank">
+                    <img src="/assets/images/Instagram.png" alt="Instagram" class="white-icon">
+                </a>
+                <a href="https://www.youtube.com/channel/UC303glYhLMP541bJISWeG8g" target="_blank">
+                    <img src="/assets/images/youtube.png" alt="YouTube" class="white-icon">
+                </a>
+            </div>
+            <div class="footer-section explore">
+                <h2>Explore</h2>
+                <div class="explore-lists">
+                    <ul>
+                        <li><a href="skillify.html">Skill Assessment Quiz</a></li>
+                        <li><a href="duel.html">1v1 Career Comparison</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="mapify.html">Career Exploration Map</a></li>
+                        <li><a href="matchup.html">Skill-to-Job Matching</a></li>
+                    </ul>
+                </div>
+                <p>© 2024 NinX. All rights reserved.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Email - ninxplore@gmail.com</span>
+        </div>
+    </footer>
+
+
+    <script>
+        function calculateResult() {
+            const form = document.getElementById("quizForm");
+            const formData = new FormData(form);
+            let result = "";
+
+            let techCount = 0;
+            let softCount = 0;
+
+            formData.forEach((value, key) => {
+                if (value === "tech") techCount++;
+                else if (value === "soft") softCount++;
+            });
+
+            if (techCount > softCount) {
+                result = "You are more inclined towards technical roles!";
+            } else if (softCount > techCount) {
+                result = "You are more inclined towards soft skills-oriented roles!";
+            } else {
+                result = "You have a balanced interest in both technical and soft skills-oriented roles!";
+            }
+
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+
+</body>
+
+</html>

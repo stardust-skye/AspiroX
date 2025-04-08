@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AspiroX | Pathways</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/assets/images/AspiroX_logo.jpg" alt="Logo">
+                </a>
+            </div>
+            <div class="center-nav">
+                <ul>
+                    <li><a href="skillify.html" class="nav-link">Skillify</a></li>
+                    <li><a href="duel.html" class="nav-link">Duel</a></li>
+                    <li><a href="mapify.html" class="nav-link">Mapify</a></li>
+                    <li><a href="matchup.html" class="nav-link">MatchUp</a></li>
+                    <li><a href="aspire.html" class="nav-link">Aspire</a></li>
+                    <li><a href="simulate.html" class="nav-link">Simulate</a></li>
+                    <li><a href="pathways.html" class="nav-link">Pathways</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <video autoplay loop muted playsinline class="background-video">
+        <source src="assets/videos/Futuristic_Background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>    
+
+    <div class="mapify-intro">
+        <p>Mapify provides an interactive career map that helps you visualize the journey ahead. By understanding the required skills and potential career paths, you can plan your career progression more effectively. This feature allows you to see the different industries and roles, offering clarity and inspiration on your path to success.</p>
+    </div>
+
+    <div class="career-buttons">
+        <button class="career-button" data-career="Software Engineering">Software Engineering</button>
+        <button class="career-button" data-career="Data Science">Data Science</button>
+        <button class="career-button" data-career="Cybersecurity">Cybersecurity</button>
+        <button class="career-button" data-career="AI Research">AI Research</button>
+        <button class="career-button" data-career="Digital Marketing">Digital Marketing</button>
+        <button class="career-button" data-career="Product Management">Product Management</button>
+        <button class="career-button" data-career="UX Design">UX Design</button>
+        <button class="career-button" data-career="Full Stack Development">Full Stack Development</button>
+        <button class="career-button" data-career="Blockchain Development">Blockchain Development</button>
+        <button class="career-button" data-career="Healthcare Consulting">Healthcare Consulting</button>
+        <!-- Add other career buttons here -->
+
+
+    </div>
+
+    <div id="career-content">
+        <!-- Content will be dynamically loaded here -->
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section social-icons">
+                <a href="https://www.linkedin.com/company/ninxify/" target="_blank">
+                    <img src="/assets/images/linkedin.png" alt="LinkedIn" class="white-icon">
+                </a>
+                <a href="https://www.instagram.com/ninxify/" target="_blank">
+                    <img src="/assets/images/Instagram.png" alt="Instagram" class="white-icon">
+                </a>
+                <a href="https://www.youtube.com/channel/UC303glYhLMP541bJISWeG8g" target="_blank">
+                    <img src="/assets/images/youtube.png" alt="YouTube" class="white-icon">
+                </a>
+            </div>
+            <div class="footer-section explore">
+                <h2>Explore</h2>
+                <div class="explore-lists">
+                    <ul>
+                        <li><a href="skillify.html">Skill Assessment Quiz</a></li>
+                        <li><a href="duel.html">1v1 Career Comparison</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="mapify.html">Career Exploration Map</a></li>
+                        <li><a href="matchup.html">Skill-to-Job Matching</a></li>
+                    </ul>
+                </div>
+                <p>© 2024 NinX. All rights reserved.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Email - ninxplore@gmail.com</span>
+        </div>
+    </footer>
+
+    <script>
+        // Function to load career content from the JSON file
+        function loadCareerContent(career) {
+            fetch('careers.json')
+                .then(response => response.json())
+                .then(data => {
+                    const careerData = data[career];
+
+                    if (careerData) {
+                        let content = `
+                            <h2>${career}</h2>
+                            <h3>Sub-branches:</h3>
+                            <ul>
+                                ${careerData.subBranches.map(branch => `<li>${branch}</li>`).join('')}
+                            </ul>
+                            <h3>Self-Assessment (Current Position):</h3>
+                            <p><strong>Skills & Strengths:</strong> ${careerData.selfAssessment.skillsAndStrengths}</p>
+                            <p><strong>Interests & Values:</strong> ${careerData.selfAssessment.interestsAndValues}</p>
+                            <p><strong>Experience:</strong> ${careerData.selfAssessment.experience}</p>
+                            <h3>Career Vision & Goals:</h3>
+                            <p><strong>Long-Term Vision:</strong> ${careerData.careerVision.longTermVision}</p>
+                            <p><strong>Short-Term Goals:</strong> ${careerData.careerVision.shortTermGoals}</p>
+                            <p><strong>Timeline:</strong> ${careerData.careerVision.timeline}</p>
+                            <h3>Education & Skill Development:</h3>
+                            <p><strong>Current Skills:</strong> ${careerData.educationAndSkillDevelopment.currentSkills}</p>
+                            <p><strong>Required Certifications:</strong> ${careerData.educationAndSkillDevelopment.requiredCertifications}</p>
+                            <p><strong>Training & Learning:</strong> ${careerData.educationAndSkillDevelopment.trainingAndLearning}</p>
+                            <h3>Networking & Mentorship:</h3>
+                            <p><strong>Industry Connections:</strong> ${careerData.networkingAndMentorship.industryConnections}</p>
+                            <p><strong>Mentors:</strong> ${careerData.networkingAndMentorship.mentors}</p>
+                            <p><strong>Networking Opportunities:</strong> ${careerData.networkingAndMentorship.networkingOpportunities}</p>
+                            <h3>Work Experience & Growth:</h3>
+                            <p><strong>Current Job/Internships:</strong> ${careerData.workExperienceAndGrowth.currentJobInternships}</p>
+                            <p><strong>Role Transitions:</strong> ${careerData.workExperienceAndGrowth.roleTransitions}</p>
+                            <p><strong>Leadership & Responsibility:</strong> ${careerData.workExperienceAndGrowth.leadershipAndResponsibility}</p>
+                            <h3>Personal Branding & Visibility:</h3>
+                            <p><strong>Online Presence:</strong> ${careerData.personalBrandingAndVisibility.onlinePresence}</p>
+                            <p><strong>Portfolio:</strong> ${careerData.personalBrandingAndVisibility.portfolio}</p>
+                            <p><strong>Thought Leadership:</strong> ${careerData.personalBrandingAndVisibility.thoughtLeadership}</p>
+                            <h3>Work-Life Balance & Wellbeing:</h3>
+                            <p><strong>Self-Care:</strong> ${careerData.workLifeBalanceAndWellbeing.selfCare}</p>
+                            <p><strong>Work-Life Balance:</strong> ${careerData.workLifeBalanceAndWellbeing.workLifeBalance}</p>
+                            <h3>Feedback & Adjustments:</h3>
+                            <p><strong>Progress Check:</strong> ${careerData.feedbackAndAdjustments.progressCheck}</p>
+                            <p><strong>Feedback:</strong> ${careerData.feedbackAndAdjustments.feedback}</p>
+                            <p><strong>Course Correction:</strong> ${careerData.feedbackAndAdjustments.courseCorrection}</p>
+                            <h3>Milestones & Celebrations:</h3>
+                            <p><strong>Key Achievements:</strong> ${careerData.milestonesAndCelebrations.keyAchievements}</p>
+                            <p><strong>Reflect:</strong> ${careerData.milestonesAndCelebrations.reflect}</p>
+                        `;
+                        document.getElementById('career-content').innerHTML = content;
+                    } else {
+                        document.getElementById('career-content').innerHTML = "<p>No data available for this career.</p>";
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading career data:', error);
+                    document.getElementById('career-content').innerHTML = "<p>Error loading career data.</p>";
+                });
+        }
+
+        // Add event listeners to career buttons
+        document.querySelectorAll('.career-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const career = button.getAttribute('data-career');
+                loadCareerContent(career);
+            });
+        });
+    </script>
+</body>
+
+</html>

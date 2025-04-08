@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AspiroX | Career Comparison</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/assets/images/AspiroX_logo.jpg" alt="Logo">
+                </a>
+            </div>
+
+            <div class="center-nav">
+                <ul>
+                    <li><a href="skillify.html" class="nav-link">Skillify</a></li>
+                    <li><a href="duel.html" class="nav-link">Duel</a></li>
+                    <li><a href="mapify.html" class="nav-link">Mapify</a></li>
+                    <li><a href="matchup.html" class="nav-link">MatchUp</a></li>
+                    <li><a href="aspire.html" class="nav-link">Aspire</a></li>
+                    <li><a href="simulate.html" class="nav-link">Simulate</a></li>
+                    <li><a href="pathways.html" class="nav-link">Pathways</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <video autoplay loop muted playsinline class="background-video">
+        <source src="assets/videos/Futuristic_Background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+    <main>
+        <section class="career-comparison">
+            <h1 style="color: white;">1v1 Career Comparison</h1>
+
+            <div class="career-selection">
+                <h2 style="color: white;">Select Two Career Paths to Compare</h2>
+                <div class="career-buttons">
+                    <button class="duel-button" onclick="selectCareer('Software Engineering')">Software
+                        Engineering</button>
+                    <button class="duel-button" onclick="selectCareer('Data Science')">Data Science</button>
+                    <button class="duel-button" onclick="selectCareer('Cybersecurity')">Cybersecurity</button>
+                    <button class="duel-button" onclick="selectCareer('AI Research')">AI Research</button>
+                    <button class="duel-button" onclick="selectCareer('Digital Marketing')">Digital Marketing</button>
+                    <button class="duel-button" onclick="selectCareer('Product Management')">Product Management</button>
+                    <button class="duel-button" onclick="selectCareer('UX Design')">UX Design</button>
+                    <button class="duel-button" onclick="selectCareer('Healthcare Consulting')">Healthcare
+                        Consulting</button>
+                </div>
+
+                <h3 style="color: white;">Selected Careers:</h3>
+                <p id="selected-careers" style="color: white;">None</p>
+                <button id="compare-button" class="compare-btn" onclick="showComparison()" disabled>Compare</button>
+            </div>
+
+            <div id="comparison-table" class="comparison-table" style="display:none;">
+                <h2>Career Comparison</h2>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th id="career-1-name"></th>
+                            <th id="career-2-name"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Skills Required</td>
+                            <td id="career-1-skills"></td>
+                            <td id="career-2-skills"></td>
+                        </tr>
+                        <tr>
+                            <td>Growth Opportunities</td>
+                            <td id="career-1-growth"></td>
+                            <td id="career-2-growth"></td>
+                        </tr>
+                        <tr>
+                            <td>Salary Expectations</td>
+                            <td id="career-1-salary"></td>
+                            <td id="career-2-salary"></td>
+                        </tr>
+                        <tr>
+                            <td>Career Trajectory</td>
+                            <td id="career-1-trajectory"></td>
+                            <td id="career-2-trajectory"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section social-icons">
+                <a href="https://www.linkedin.com/company/ninxify/" target="_blank">
+                    <img src="/assets/images/linkedin.png" alt="LinkedIn" class="white-icon">
+                </a>
+                <a href="https://www.instagram.com/ninxify/" target="_blank">
+                    <img src="/assets/images/Instagram.png" alt="Instagram" class="white-icon">
+                </a>
+                <a href="https://www.youtube.com/channel/UC303glYhLMP541bJISWeG8g" target="_blank">
+                    <img src="/assets/images/youtube.png" alt="YouTube" class="white-icon">
+                </a>
+            </div>
+            <div class="footer-section explore">
+                <h2>Explore</h2>
+                <div class="explore-lists">
+                    <ul>
+                        <li><a href="skillify.html">Skill Assessment Quiz</a></li>
+                        <li><a href="duel.html">1v1 Career Comparison</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="mapify.html">Career Exploration Map</a></li>
+                        <li><a href="matchup.html">Skill-to-Job Matching</a></li>
+                    </ul>
+                </div>
+                <p>© 2024 NinX. All rights reserved.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Email - ninxplore@gmail.com</span>
+        </div>
+    </footer>
+
+    <script>
+
+        // Select all career buttons
+        const careerButtons = document.querySelectorAll('.career-buttons button');
+
+        careerButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Toggle the 'selected' class on the clicked button
+                button.classList.toggle('selected');
+
+                // Ensure that no more than 2 buttons are selected
+                const selectedButtons = document.querySelectorAll('.career-buttons button.selected');
+                if (selectedButtons.length > 2) {
+                    selectedButtons[0].classList.remove('selected'); // Deselect the first selected button
+                }
+
+                // Enable or disable the compare button based on selected buttons
+                const compareButton = document.querySelector('.compare-btn');
+                if (selectedButtons.length === 2) {
+                    compareButton.disabled = false;
+                    compareButton.classList.add('active');
+                } else {
+                    compareButton.disabled = true;
+                    compareButton.classList.remove('active');
+                }
+            });
+        });
+
+
+        let selectedCareers = [];
+
+        const comparisonData = {
+            "Software Engineering": {
+                "skills": "Strong proficiency in programming languages (Java, C++, Python), problem-solving, understanding of algorithms, databases, and software development life cycle.",
+                "growth": "Excellent job demand and growth, particularly in tech companies, startups, and industries relying on software solutions.",
+                "salary": "$70,000 to $120,000 annually, with senior roles reaching $150,000+.",
+                "trajectory": "Software developers, systems engineers, backend/frontend engineers, mobile app developers."
+            },
+            "Data Science": {
+                "skills": "Strong foundation in statistics, data analysis, machine learning algorithms, programming (Python, R), data visualization tools (e.g., Tableau, Power BI), and big data technologies like Hadoop and Spark.",
+                "growth": "High demand across various industries (tech, healthcare, finance), with growth in AI and machine learning.",
+                "salary": "$80,000 to $130,000 annually, senior roles can exceed $150,000.",
+                "trajectory": "Data analyst, data engineer, machine learning engineer, research scientist, business intelligence analyst."
+            },
+            "Cybersecurity": {
+                "skills": "Strong knowledge of network protocols, ethical hacking, cryptography, firewall management, and risk management. Familiarity with tools like Kali Linux and Wireshark is beneficial.",
+                "growth": "Booming demand due to increasing threats and attacks on digital infrastructures.",
+                "salary": "$70,000 to $150,000 annually, with senior roles earning higher salaries.",
+                "trajectory": "Security analyst, penetration tester, security engineer, incident responder, security architect."
+            },
+            "AI Research": {
+                "skills": "Advanced knowledge in machine learning, deep learning, reinforcement learning, and algorithms. Proficiency in programming (Python, C++) and tools like TensorFlow, PyTorch.",
+                "growth": "High demand in research institutions and tech companies, with applications across industries.",
+                "salary": "$90,000 to $150,000 annually, leading AI researchers can earn more.",
+                "trajectory": "AI research scientist, machine learning engineer, AI software developer."
+            },
+            "Digital Marketing": {
+                "skills": "Proficiency in SEO, SEM, content creation, social media management, email marketing, and digital advertising platforms.",
+                "growth": "Rapid growth driven by the importance of online presence for businesses.",
+                "salary": "$50,000 to $100,000 annually, senior roles earning more.",
+                "trajectory": "Social media manager, SEO specialist, content strategist, digital marketing analyst."
+            },
+            "Product Management": {
+                "skills": "Strong understanding of business strategy, market research, project management, product design, and team management. Excellent communication skills.",
+                "growth": "High demand in tech, e-commerce, and software development.",
+                "salary": "$85,000 to $130,000 annually, senior roles earning more.",
+                "trajectory": "Product manager, senior product manager, product owner."
+            },
+            "UX Design": {
+                "skills": "Proficiency in design software, user research, wireframing, prototyping, and user testing.",
+                "growth": "High demand as companies focus on user-centric designs for their products.",
+                "salary": "$60,000 to $100,000 annually, senior roles can exceed $120,000.",
+                "trajectory": "UX designer, interaction designer, usability specialist, product designer."
+            },
+            "Healthcare Consulting": {
+                "skills": "Strong analytical skills, knowledge of healthcare systems, business operations, and regulations. Proficiency in data analysis and problem-solving.",
+                "growth": "Steady growth as healthcare systems become more complex.",
+                "salary": "$70,000 to $120,000 annually, with senior roles reaching higher figures.",
+                "trajectory": "Healthcare consultant, healthcare strategist, operations consultant."
+            }
+        };
+
+        function selectCareer(career) {
+            if (selectedCareers.includes(career)) {
+                selectedCareers = selectedCareers.filter(c => c !== career);
+            } else {
+                if (selectedCareers.length < 2) {
+                    selectedCareers.push(career);
+                } else {
+                    alert("You can only select two careers to compare.");
+                }
+            }
+
+            document.getElementById("selected-careers").innerText = selectedCareers.join(" vs ");
+            document.getElementById("compare-button").disabled = selectedCareers.length !== 2;
+        }
+
+        function showComparison() {
+            const career1 = selectedCareers[0];
+            const career2 = selectedCareers[1];
+
+            document.getElementById("career-1-name").innerText = career1;
+            document.getElementById("career-2-name").innerText = career2;
+
+            document.getElementById("career-1-skills").innerText = comparisonData[career1].skills;
+            document.getElementById("career-2-skills").innerText = comparisonData[career2].skills;
+
+            document.getElementById("career-1-growth").innerText = comparisonData[career1].growth;
+            document.getElementById("career-2-growth").innerText = comparisonData[career2].growth;
+
+            document.getElementById("career-1-salary").innerText = comparisonData[career1].salary;
+            document.getElementById("career-2-salary").innerText = comparisonData[career2].salary;
+
+            document.getElementById("career-1-trajectory").innerText = comparisonData[career1].trajectory;
+            document.getElementById("career-2-trajectory").innerText = comparisonData[career2].trajectory;
+
+            document.getElementById("comparison-table").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

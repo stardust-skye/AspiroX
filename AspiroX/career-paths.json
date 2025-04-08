@@ -1,0 +1,143 @@
+{
+    "high-salary": {
+      "title": "High Salary",
+      "careerPath": "Data Scientist",
+      "progression": [
+        "Entry-Level: Junior Data Analyst",
+        "Mid-Level: Data Scientist",
+        "Advanced: Senior Data Scientist or Machine Learning Engineer"
+      ],
+      "upskilling": [
+        "Basic: Complete courses in data analysis (e.g., Google Data Analytics)",
+        "Intermediate: Pursue a specialization in machine learning",
+        "Advanced: Consider certifications like TensorFlow Developer or AWS Certified Machine Learning"
+      ]
+    },
+    "work-life-balance": {
+      "title": "Work-Life Balance",
+      "careerPath": "UX Designer",
+      "progression": [
+        "Entry-Level: Junior UX Designer",
+        "Mid-Level: UX Designer",
+        "Advanced: Senior UX Designer or UX Manager"
+      ],
+      "upskilling": [
+        "Basic: Learn design fundamentals with courses in UX design (e.g., Coursera or Udacity)",
+        "Intermediate: Get certified in design tools like Figma or Sketch",
+        "Advanced: Pursue advanced courses in human-centered design or UX strategy"
+      ]
+    },
+    "cutting-edge-tech": {
+      "title": "Cutting-Edge Technology",
+      "careerPath": "AI Engineer",
+      "progression": [
+        "Entry-Level: AI Research Assistant",
+        "Mid-Level: AI Engineer",
+        "Advanced: Senior AI Engineer or Research Scientist"
+      ],
+      "upskilling": [
+        "Basic: Learn AI basics with introductory courses",
+        "Intermediate: Complete specializations in AI frameworks like TensorFlow",
+        "Advanced: Earn certifications or a master's degree in AI and ML"
+      ]
+    },
+    "leadership-role": {
+      "title": "Leadership Role",
+      "careerPath": "Product Manager",
+      "progression": [
+        "Entry-Level: Associate Product Manager",
+        "Mid-Level: Product Manager",
+        "Advanced: Senior Product Manager or Head of Product"
+      ],
+      "upskilling": [
+        "Basic: Learn fundamentals of product management (e.g., Product School)",
+        "Intermediate: Certified Scrum Product Owner (CSPO)",
+        "Advanced: Specialized MBA or executive product management courses"
+      ]
+    },
+    "freelance-opportunities": {
+      "title": "Freelance Opportunities",
+      "careerPath": "Graphic Designer",
+      "progression": [
+        "Entry-Level: Junior Designer",
+        "Mid-Level: Freelance Graphic Designer",
+        "Advanced: Creative Director or Senior Freelance Designer"
+      ],
+      "upskilling": [
+        "Basic: Learn design tools like Adobe Illustrator",
+        "Intermediate: Build a design portfolio",
+        "Advanced: Master client management and contract skills"
+      ]
+    },
+    "international-travel": {
+      "title": "International Travel",
+      "careerPath": "Consultant",
+      "progression": [
+        "Entry-Level: Junior Consultant",
+        "Mid-Level: Consultant",
+        "Advanced: Senior Consultant or Global Project Manager"
+      ],
+      "upskilling": [
+        "Basic: Learn consulting fundamentals",
+        "Intermediate: Take language courses and cultural sensitivity training",
+        "Advanced: Advanced certifications in consulting or international relations"
+      ]
+    },
+    "social-impact": {
+      "title": "Social Impact",
+      "careerPath": "Non-Profit Manager",
+      "progression": [
+        "Entry-Level: Program Assistant",
+        "Mid-Level: Program Manager",
+        "Advanced: Director or Executive Director"
+      ],
+      "upskilling": [
+        "Basic: Take courses in public policy",
+        "Intermediate: Earn certifications in project management for non-profits",
+        "Advanced: Study social entrepreneurship or public administration"
+      ]
+    },
+    "remote-friendly": {
+      "title": "Remote-Friendly",
+      "careerPath": "Software Developer",
+      "progression": [
+        "Entry-Level: Junior Developer",
+        "Mid-Level: Software Developer",
+        "Advanced: Senior Developer or Team Lead"
+      ],
+      "upskilling": [
+        "Basic: Learn programming basics",
+        "Intermediate: Master collaborative tools like Git",
+        "Advanced: Study remote team management and digital communication"
+      ]
+    },
+    "rapid-growth": {
+      "title": "Rapid Growth Potential",
+      "careerPath": "Sales Engineer",
+      "progression": [
+        "Entry-Level: Sales Representative",
+        "Mid-Level: Sales Engineer",
+        "Advanced: Senior Sales Engineer or Sales Director"
+      ],
+      "upskilling": [
+        "Basic: Complete sales strategy courses",
+        "Intermediate: Earn certifications in CRM tools",
+        "Advanced: Study advanced sales techniques or entrepreneurship"
+      ]
+    },
+    "creativity-driven": {
+      "title": "Creativity-Driven",
+      "careerPath": "Content Creator",
+      "progression": [
+        "Entry-Level: Content Writer",
+        "Mid-Level: Content Creator",
+        "Advanced: Content Strategist or Creative Director"
+      ],
+      "upskilling": [
+        "Basic: Learn storytelling techniques",
+        "Intermediate: Master video and graphic editing tools",
+        "Advanced: Study brand strategy and content marketing"
+      ]
+    }
+  }
+  

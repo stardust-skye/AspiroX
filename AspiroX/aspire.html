@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AspiroX | Career Path Selection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/assets/images/AspiroX_logo.jpg" alt="Logo">
+                </a>
+            </div>
+            <div class="center-nav">
+                <ul>
+                    <li><a href="skillify.html" class="nav-link">Skillify</a></li>
+                    <li><a href="duel.html" class="nav-link">Duel</a></li>
+                    <li><a href="mapify.html" class="nav-link">Mapify</a></li>
+                    <li><a href="matchup.html" class="nav-link">MatchUp</a></li>
+                    <li><a href="aspire.html" class="nav-link">Aspire</a></li>
+                    <li><a href="simulate.html" class="nav-link">Simulate</a></li>
+                    <li><a href="pathways.html" class="nav-link">Pathways</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <video autoplay loop muted playsinline class="background-video">
+        <source src="assets/videos/Futuristic_Background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="career-path-selection">
+        <p class="pathways-description">
+            Aspire allows users to set personalized career goals, like prioritizing a high salary, work-life balance, or
+            involvement in cutting-edge tech. By aligning career paths with these preferences, Aspire provides tailored
+            suggestions on how to reach these goals.
+        </p>
+        <label for="career-path">Choose your priority:</label>
+        <select id="career-path">
+            <option value="">Select a priority...</option>
+            <option value="high-salary">High Salary</option>
+            <option value="work-life-balance">Work-Life Balance</option>
+            <option value="cutting-edge-tech">Cutting-Edge Technology</option>
+            <option value="leadership-role">Leadership Role</option>
+            <option value="freelance-opportunities">Freelance Opportunities</option>
+            <option value="international-travel">International Travel</option>
+            <option value="social-impact">Social Impact</option>
+            <option value="remote-friendly">Remote-Friendly</option>
+            <option value="rapid-growth">Rapid Growth Potential</option>
+            <option value="creativity-driven">Creativity-Driven</option>
+        </select>
+
+        <div class="career-path-result" id="career-path-result">
+            <h3>Career Path Recommendation</h3>
+            <p id="result-text"></p>
+        </div>
+    </div>
+
+
+    <script>
+        document.getElementById("career-path").addEventListener("change", function () {
+            const selectedValue = this.value;
+            const resultText = document.getElementById("result-text");
+            const resultCard = document.getElementById("career-path-result");
+
+            fetch("career-paths.json")
+                .then(response => response.json())
+                .then(data => {
+                    if (data[selectedValue]) {
+                        const careerInfo = data[selectedValue];
+                        resultText.innerHTML = `
+                    <strong>${careerInfo.title}</strong><br>
+                    <strong>Career Path:</strong> ${careerInfo.careerPath}<br>
+                    <strong>Progression:</strong><br> ${careerInfo.progression.join("<br>")}<br>
+                    <strong>Upskilling Recommendations:</strong><br> ${careerInfo.upskilling.join("<br>")}
+                `;
+                        resultCard.style.display = "block";
+                    } else {
+                        resultCard.style.display = "none";
+                    }
+                })
+                .catch(error => console.error('Error loading JSON:', error));
+        });
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section social-icons">
+                <a href="https://www.linkedin.com/company/ninxify/" target="_blank">
+                    <img src="/assets/images/linkedin.png" alt="LinkedIn" class="white-icon">
+                </a>
+                <a href="https://www.instagram.com/ninxify/" target="_blank">
+                    <img src="/assets/images/Instagram.png" alt="Instagram" class="white-icon">
+                </a>
+                <a href="https://www.youtube.com/channel/UC303glYhLMP541bJISWeG8g" target="_blank">
+                    <img src="/assets/images/youtube.png" alt="YouTube" class="white-icon">
+                </a>
+            </div>
+            <div class="footer-section explore">
+                <h2>Explore</h2>
+                <div class="explore-lists">
+                    <ul>
+                        <li><a href="skillify.html">Skill Assessment Quiz</a></li>
+                        <li><a href="duel.html">1v1 Career Comparison</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="mapify.html">Career Exploration Map</a></li>
+                        <li><a href="matchup.html">Skill-to-Job Matching</a></li>
+                    </ul>
+                </div>
+                <p>© 2024 NinX. All rights reserved.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Email - ninxplore@gmail.com</span>
+        </div>
+    </footer>
+</body>
+
+</html>

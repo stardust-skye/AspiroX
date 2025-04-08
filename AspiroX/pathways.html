@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AspiroX | Home Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/assets/images/AspiroX_logo.jpg" alt="Logo">
+                </a>
+            </div>
+
+            <div class="center-nav">
+                <ul>
+                    <li><a href="skillify.html" class="nav-link">Skillify</a></li>
+                    <li><a href="duel.html" class="nav-link">Duel</a></li>
+                    <li><a href="mapify.html" class="nav-link">Mapify</a></li>
+                    <li><a href="matchup.html" class="nav-link">MatchUp</a></li>
+                    <li><a href="aspire.html" class="nav-link">Aspire</a></li>
+                    <li><a href="simulate.html" class="nav-link">Simulate</a></li>
+                    <li><a href="pathways.html" class="nav-link">Pathways</a></li>
+                </ul>
+            </div>
+        </nav>
+        <video autoplay loop muted playsinline class="background-video">
+            <source src="assets/videos/Futuristic_Background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </header>
+
+    <section class="pathways-career-paths">
+        <h2>Explore Career Paths</h2>
+        <p class="pathways-description">
+            Pathways provides a roadmap for your career, helping you understand what steps you need to take to reach your desired job. This feature outlines the skills, certifications, and experiences required to advance in your field, helping you make informed decisions at every stage of your career.
+        </p>
+        <div class="pathways-button-container">
+            <button onclick="openPDF('ai-data-scientist.pdf')">AI Data Scientist</button>
+            <button onclick="openPDF('android.pdf')">Android</button>
+            <button onclick="openPDF('api-design.pdf')">API Design</button>
+            <button onclick="openPDF('backend.pdf')">Backend</button>
+            <button onclick="openPDF('cyber-security.pdf')">Cyber Security</button>
+            <button onclick="openPDF('devops.pdf')">DevOps</button>
+            <button onclick="openPDF('frontend.pdf')">Frontend</button>
+            <button onclick="openPDF('full-stack.pdf')">Full Stack</button>
+            <button onclick="openPDF('ios.pdf')">iOS</button>
+            <button onclick="openPDF('ux-design.pdf')">UX Design</button>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section social-icons">
+                <a href="https://www.linkedin.com/company/ninxify/" target="_blank">
+                    <img src="/assets/images/linkedin.png" alt="LinkedIn" class="white-icon">
+                </a>
+                <a href="https://www.instagram.com/ninxify/" target="_blank">
+                    <img src="/assets/images/Instagram.png" alt="Instagram" class="white-icon">
+                </a>
+                <a href="https://www.youtube.com/channel/UC303glYhLMP541bJISWeG8g" target="_blank">
+                    <img src="/assets/images/youtube.png" alt="YouTube" class="white-icon">
+                </a>
+            </div>
+            <div class="footer-section explore">
+                <h2>Explore</h2>
+                <div class="explore-lists">
+                    <ul>
+                        <li><a href="skillify.html">Skill Assessment Quiz</a></li>
+                        <li><a href="duel.html">1v1 Career Comparison</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="mapify.html">Career Exploration Map</a></li>
+                        <li><a href="matchup.html">Skill-to-Job Matching</a></li>
+                    </ul>
+                </div>
+                <p>© 2024 NinX. All rights reserved.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Email - ninxplore@gmail.com</span>
+        </div>
+    </footer>
+
+    <script>
+        function openPDF(fileName) {
+            window.open(`assets/pdfs/${fileName}`, '_blank');
+        }
+
+    </script>
+
+    <!-- <script src="home_script.js"></script> -->
+</body>
+
+</html>
